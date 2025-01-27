@@ -15,37 +15,19 @@ AMovePlatform::AMovePlatform()
 void AMovePlatform::BeginPlay()
 {
 	Super::BeginPlay();
-
-	MyX = MyVector.X;
-
-	//float tmp = MyVector.Y;
-	//MyVector.Y = MyVector.Z;
-	//MyVector.Z = tmp;
-
-
-
-	// 플레이어 캐릭터 가져오기
-	//SetActorLocation(MyVector);
 }
 
 // Called every frame
 void AMovePlatform::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
-	FVector LocalVector = MyVector;
-
-	LocalVector.Z += 100.f;
-	
-	MyVector.Y += 1.f;
-
-	SetActorLocation(LocalVector);
-
-
 	// Move platform forwards
 		// Get current location
+	FVector currentLocation = GetActorLocation();
 		// Add vector to tha location
+	FVector newLocation = currentLocation + (FVector(100.f, 0.f, 0) * DeltaTime);
 		// Set the location
+	SetActorLocation(newLocation);
 	// Send platform back  if gone too far
 		// Check how far we've moved
 		// Reverse direction of motion if gone too far
