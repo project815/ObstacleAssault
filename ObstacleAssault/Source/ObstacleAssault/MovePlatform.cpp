@@ -17,7 +17,6 @@ AMovePlatform::AMovePlatform()
 	SplineComponent->AddSplinePoint(FVector(0.0f, 0.0f, 0.0f), ESplineCoordinateSpace::Local);
 	SplineComponent->AddSplinePoint(FVector(500.0f, 0.0f, 0.0f), ESplineCoordinateSpace::Local);
 }
-
 // Called when the game starts or when spawned
 void AMovePlatform::BeginPlay()
 {
@@ -33,7 +32,7 @@ void AMovePlatform::Tick(float DeltaTime)
 	// Move platform forwards
 		// Get current location
 	//FVector currentLocation = GetActorLocation();
-	//	// Add vector to tha location
+	//	// Add vector to the location
 	//currentLocation = currentLocation + (PlatformVelocity * DeltaTime);
 	//	// Set the location
 	//SetActorLocation(currentLocation);
